@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora de IMC.:</h1>
+    Insira seu peso em quilogramas: <input type="number" name="txtn1" id="txtn1">kgs
+    Insira sua altura em metros:<input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" onclick="calcular()">
+    <div id="res">
+        Resultado:
+    </div>
+
+    <script>
+       function calcular () {
+        var tn1 = document.getElementById ('txtn1')
+        var tn2 = document.querySelector ('input#txtn2')
+        var res = document.getElementById ('res')
+        var n1 = Number(tn1.value)
+        var n2 = Number(tn2.value)
+        var s = n1/(n2 * n2)
+        res.innerHTML = (`Seu peso atual é: ${n1}kgs`)
+        res.innerHTML += ("</br>")
+        res.innerHTML += (`Seu IMC é: ${s}`)
+        if(s<18.5){
+            res.innerHTML += ("</br>")
+            res.innerHTML +=("E você está abaixo do peso.")
+        }else if (s>=18.5 && s<=24.9) {
+            res.innerHTML += ("</br>")
+            res.innerHTML +=("E você está no peso normal.")
+        }else if (s>=25 && s <=29.9) {
+            res.innerHTML += ("</br>")
+            res.innerHTML +=("E você está com sobrepeso.")
+        }else if (s>=30 && s<=34.9) {
+            res.innerHTML += ("</br>")
+            res.innerHTML +=("E você está com obesidade.")
+        }else if (s>=35 && s<=39.9) {
+            res.innerHTML += ("</br>")
+            res.innerHTML +=("E você está com obesidade severa.")   
+        } else if (s>=40){
+            res.innerHTML += ("</br>")
+            res.innerHTML +=("E você está com obesidade morbida.")
+        }
+        
+
+       }
+    </script>
+</body>
+</html>
